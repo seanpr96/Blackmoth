@@ -355,6 +355,9 @@ namespace Blackmoth
 
         public void CheckForDash()
         {
+            GetPrivateField("dashQueueSteps").SetValue(HeroController.instance, 0);
+            GetPrivateField("dashQueuing").SetValue(HeroController.instance, false);
+
             SetDashDamage();
             if (GameManager.instance.inputHandler.inputActions.down.IsPressed && CanDashDown())
             {
